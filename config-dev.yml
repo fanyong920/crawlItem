@@ -13,6 +13,8 @@ spring:
           basedir: H:/PPT/basedir
   profiles: dev
 version: 1.0
+env: 
+  dev
 
 eureka:
   client:
