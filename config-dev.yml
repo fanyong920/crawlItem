@@ -11,10 +11,7 @@ spring:
           username: fanyong920
           password: f642518286920
   profiles:
-    include:
-      - test
-      - dev
-      - pro
+    dev
 eureka:
   client:
     service-url:
@@ -22,3 +19,5 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port} 
+env: 
+  dev
