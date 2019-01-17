@@ -1,12 +1,11 @@
-version: 1.0
-server:
-  port: 8084
-env: test
-version: 1.0
+version: test
 spring:
-  profiles: 
-    active:
-      - test
-    include:
-      - test
+  application:
+    name: config
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
