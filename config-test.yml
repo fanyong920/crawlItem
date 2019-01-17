@@ -10,6 +10,10 @@ spring:
           uri: https://github.com/fanyong920/spring-cloud.git
           username: fanyong920
           password: f642518286920
+          basedir: H:/PPT/basedir
+  profiles: 
+    test
+ 
 eureka:
   client:
     service-url:
@@ -17,3 +21,5 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port} 
+env:
+  test
