@@ -21,3 +21,4 @@ eureka:
     instance-id: ${spring.application.name}:${server.port} 
 env: 
   dev
+version: 1.0
