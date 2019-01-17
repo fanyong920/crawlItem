@@ -1,0 +1,19 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: spring-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fanyong920/spring-cloud.git
+          username: fanyong920
+          password: f642518286920
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port} 
