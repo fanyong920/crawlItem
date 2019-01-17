@@ -1,3 +1,4 @@
+version: dev
 server:
   port: 8084
 env: dev
