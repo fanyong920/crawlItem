@@ -1,4 +1,3 @@
-version: dev
 eureka:
   instance:
     prefer-ip-address: true
