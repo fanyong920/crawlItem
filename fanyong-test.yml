@@ -1,7 +1,4 @@
 version: test
-spring:
-  application:
-    name: config
 eureka:
   instance:
     prefer-ip-address: true
