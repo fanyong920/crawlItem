@@ -1,0 +1,40 @@
+{
+	"name":"chromeCrawl",
+	"description":"Crawl e-commerce website item information",
+	"version":"1.0",
+	"manifest_version":2,
+	"options_page": "options.html",
+	"browser_action":{
+		"default_popup":"popup.html",
+		"default_icon":{
+			"16":"images/48.png",
+			"32":"images/32.png",
+			"48":"images/48.png",
+			"128":"images/128.jpg"
+		}
+	},
+	"commands":{
+		"_execute_browser_action": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+F",
+          "mac": "MacCtrl+Shift+F"
+        },
+        "description": "Opens hello.html"
+      }
+	},
+	"background":{
+		"scripts":["jquery-2.0.0.min.js","background.js"],
+		"permission":false
+	},
+	"content_scripts":[{
+		"js":["jquery-2.0.0.min.js","content_script.js"],
+		"matches":["*://*/*"]
+	}],
+	"permissions":["activeTab","declarativeContent","storage","webRequest", "tabs","http://*/*","https://*/*"],
+	"icons": {
+      	"16":"images/16.png",
+		"32":"images/32.png",
+		"48":"images/48.png",
+		"128":"images/128.jpg"
+    }
+}
