@@ -1,4 +1,11 @@
-
+chrome.tabs.onCreated.addListener(function(tab){
+	chrome.windows.getCurrent(function(currentWindow){
+		if(currentWindow.state != "minimized"){
+			chrome.windows.update(tab.windowId, {"state":"minimized"});
+		}
+	})
+	
+})
 chrome.runtime.onMessage.addListener(function(message,send,response){
 var param ={
 	"content":message
