@@ -1,4 +1,5 @@
 //https://blog.it2048.cn/article-puppeteer-speed-up/ 优化puppeteer
+//http://www.sanfenzui.com/pyppeteer-install-chrome-extensions-and-test.html 命令行插件
 chrome.tabs.onCreated.addListener(function(tab){
 	chrome.windows.getCurrent(function(currentWindow){
 		if(currentWindow.state != "minimized"){
