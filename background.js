@@ -1,3 +1,4 @@
+//https://blog.it2048.cn/article-puppeteer-speed-up/ 优化puppeteer
 chrome.tabs.onCreated.addListener(function(tab){
 	chrome.windows.getCurrent(function(currentWindow){
 		if(currentWindow.state != "minimized"){
