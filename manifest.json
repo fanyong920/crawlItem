@@ -1,11 +1,12 @@
 {
 	"name":"chromeCrawl",
-	"description":"Crawl e-commerce website item information",
+	"description":"Crawl website page content information",
 	"version":"1.0",
 	"manifest_version":2,
 	"options_page": "options.html",
 	"browser_action":{
 		"default_popup":"popup.html",
+		" default_title":"抓取页面所有内容便利工具",
 		"default_icon":{
 			"16":"images/48.png",
 			"32":"images/32.png",
@@ -23,14 +24,14 @@
       }
 	},
 	"background":{
-		"scripts":["jquery-2.0.0.min.js","background.js"],
+		"scripts":["background.js"],
 		"permission":false
 	},
 	"content_scripts":[{
-		"js":["jquery-2.0.0.min.js","content_script.js"],
+		"js":["content_script.js"],
 		"matches":["*://*/*"]
 	}],
-	"permissions":["activeTab","declarativeContent","storage","webRequest", "tabs","http://*/*","https://*/*"],
+	"permissions":["tabs","storage","activeTab","*://*/*"],
 	"icons": {
       	"16":"images/16.png",
 		"32":"images/32.png",

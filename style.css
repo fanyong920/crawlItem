@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+
+
+.todo-cmp {
+  background: #ffffff;
+  color: #497081;
+  padding: 1px 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15);
+  width: 180px;
+}
+.todo-cmp__header {
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+.todo-cmp__header h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 4px auto;
+  padding: 0;
+}
+.todo-cmp__header p {
+  padding: 0 0 5px;
+  margin: 4px auto;
+  font-size: 0.8rem;
+}
+.todo-cmp__list {
+  list-style: none;
+  padding: 0;
+}
+.todo-cmp__list li {
+  padding: 2px 0 15px;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+.todo-cmp__list li label {
+  cursor: pointer;
+  font-size: 0.82rem;
+  width: 100%;
+  display: block;
+}
+.todo-cmp__list li label input {
+  float: right;
+  opacity: 0;
+}
+.todo-cmp__list li label span {
+  position: relative;
+  display: block;
+  transition: all 550ms ease-in-out;
+}
+.todo-cmp__list li label input + span::after {
+  content: "";
+  display: block;
+  border: 1px solid #497081;
+  border-radius: 13px;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  z-index: 10;
+  transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* https://matthewlein.com/tools/ceaser */
+}
+.todo-cmp__list li label input  + span::before {
+  content: "✔";
+  display: block;
+  font-size: 22px;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  right: -2px;
+  top: -8px;
+  z-index: 10;
+  opacity: 0;
+}
+.todo-cmp__list li label input:checked + span {
+  color: #ccc;
+  transition: all 550ms ease-in-out;
+}
+.todo-cmp__list li label input:checked + span::after {
+  opacity: 0;
+  height: 17px;
+  width: 17px;
+  top: -2px;
+  right: -2px;
+}
+.todo-cmp__list li label input:checked + span::before {
+  opacity: 1;
+  transition: all 550ms ease-in-out;
+}
