@@ -45,4 +45,7 @@ public class CrawlerController {
 }
 
 ```
-当你打开网页爬取功能，并且定义好接收数据接口，此时，你可以随意打开一个网页，如果顺利的话，接口会打印出网页的内容。
+当您打开网页爬取功能，并且定义好接收数据接口，此时，您可以随意打开一个网页，如果顺利的话，接口会打印出网页的内容。
+已经发布到谷歌商店，可搜索下载
+！[image.png] （https://i.loli.net/2020/04/10/6yxNbqOljRBdk94.png）
+链接：[点我](https://chrome.google.com/webstore/detail/chromecrawl/pcadbaceejnkfhkoomcbdifcpfefkmbl?authuser=0&hl=zh-CN)
