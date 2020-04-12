@@ -4,7 +4,12 @@ var reqUrl = 'http://localhost:8080/content';
 var isClosePage = false;
 var isCrawl = false;
 var isBlockMedia = false;
-
+var detailsCallback = function(details) {return { cancel: true};};
+var filter = {
+		urls: ["*://*/*"],
+		types: ["font", "image", "media"]
+	};
+var opt_extraInfoSpec = ["blocking"];
 chrome.storage.sync.get(['isCrawl', 'isClose', 'reqUrl','blockMedia'], function (result) {
 	console.log("settting is get  ", result);
 	if (result.isCrawl == true) {
@@ -21,12 +26,15 @@ chrome.storage.sync.get(['isCrawl', 'isClose', 'reqUrl','blockMedia'], function 
 	}
 	if (result.blockMedia == true) {
 		isBlockMedia = true;
-		console.log("isBlockMedia", isClosePage);
+		console.log("isBlockMedia", isBlockMedia);
+		chrome.webRequest.onBeforeRequest.addListener(
+			detailsCallback,
+			filter,
+			opt_extraInfoSpec);
 	}
 });
 
 chrome.webNavigation.onCompleted.addListener(function (details) {
-	console.log(details)
 	if (details.frameId == 0 && details.parentFrameId === -1) {
 		if (isCrawl) {
 			chrome.tabs.sendMessage(details.tabId, "getContent", null, (result) => {
@@ -42,16 +50,6 @@ chrome.webNavigation.onCompleted.addListener(function (details) {
 	}
 
 })
-
-chrome.webRequest.onBeforeRequest.addListener(
-	function (details) {
-		return { cancel: true };
-	},
-	{
-		urls: ["*://*/*"],
-		types: ["font", "image", "media"]
-	},
-	["blocking"]);
 
 /**
  * 自动关闭设置
@@ -87,6 +85,16 @@ function isCrawlPage(checked) {
  */
 function blockMediaSet(checked) {
 	isBlockMedia = checked;
+	console.log(chrome.webRequest.onBeforeRequest.removeListener)
+	if(!checked){
+		chrome.webRequest.onBeforeRequest.removeListener(detailsCallback);
+	}else{
+		chrome.webRequest.onBeforeRequest.addListener(
+			detailsCallback,
+			filter,
+			opt_extraInfoSpec);
+	}
+	
 }
 /**
  * 
@@ -136,3 +144,4 @@ function getQueryString(paramObj) {
 	}
 
 }
+
