@@ -31,7 +31,7 @@
 		"js":["content_script.js"],
 		"matches":["*://*/*"]
 	}],
-	"permissions":["tabs","storage","activeTab","*://*/*"],
+	"permissions":["tabs","storage","activeTab","*://*/*","webRequest","webRequestBlocking","webNavigation"],
 	"icons": {
       	"16":"images/16.png",
 		"32":"images/32.png",
