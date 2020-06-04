@@ -49,3 +49,7 @@ public class CrawlerController {
 已经发布到谷歌商店，可搜索下载<br/>
 ![](https://i.loli.net/2020/04/10/6yxNbqOljRBdk94.png)
 插件地址：[点我](https://chrome.google.com/webstore/detail/chromecrawl/pcadbaceejnkfhkoomcbdifcpfefkmbl?authuser=0&hl=zh-CN)
+
+#### 我的JAVA爬虫框架
+https://github.com/fanyong920/jvppeteer
+
